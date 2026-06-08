@@ -29,7 +29,7 @@ Edit `server/.env`:
 MONGO_URI=mongodb+srv://your-atlas-uri
 EMAIL_USER=your@gmail.com
 EMAIL_PASS=your-gmail-app-password
-COMPANY_EMAIL=info@perfectrecruit.net
+COMPANY_EMAIL=Connect@perfectrecruit.net
 PORT=5000
 ADMIN_SECRET=your-secret-key
 ```
@@ -125,6 +125,6 @@ npm run build
 
 - **Company:** PerfectRecruit Services
 - **Phone/WhatsApp:** +91 8160523497
-- **Email:** info@perfectrecruit.net
+- **Email:** Connect@perfectrecruit.net
 - **Contact:** Mr. Gaurav Rajput
 - **LinkedIn:** [perfectrecruit-services](https://linkedin.com/company/perfectrecruit-services)

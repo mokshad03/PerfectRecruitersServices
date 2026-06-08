@@ -108,7 +108,7 @@ const userConfirmationTemplate = (name) => `
       <p>For urgent matters, feel free to reach us directly:</p>
       <ul>
         <li>📞 <a href="tel:+918160523497">+91 8160523497</a> (Mr. Gaurav Rajput)</li>
-        <li>📧 <a href="mailto:info@perfectrecruit.net">info@perfectrecruit.net</a></li>
+        <li>📧 <a href="mailto:Connect@perfectrecruit.net">Connect@perfectrecruit.net</a></li>
         <li>📍 Ahmedabad, Gujarat, India</li>
       </ul>
       <div class="cta">
