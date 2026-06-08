@@ -1,0 +1,189 @@
+@import './PageHero.css';
+
+/* ===== Industries List ===== */
+.industries__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+}
+
+.industry-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(74,14,143,0.06);
+  transition: box-shadow var(--transition-base);
+}
+
+.industry-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.industry-card--reverse {
+  grid-template-columns: 1fr 320px;
+}
+
+.industry-card--reverse .industry-card__visual {
+  order: 2;
+}
+
+.industry-card--reverse .industry-card__content {
+  order: 1;
+}
+
+/* Visual panel */
+.industry-card__visual {
+  background: linear-gradient(135deg, var(--ind-color, #4A0E8F) 0%, rgba(0,191,165,0.8) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-card__visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='20' cy='20' r='10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.industry-card__icon-big {
+  font-size: 4rem;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+}
+
+.industry-card__stat {
+  position: relative;
+}
+
+.industry-card__countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+}
+
+.industry-card__country {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Content panel */
+.industry-card__title {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.industry-card__desc {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.industry-card__detail {
+  font-size: 0.9rem;
+  color: var(--color-dark-gray);
+  line-height: 1.75;
+  margin-bottom: var(--spacing-lg);
+}
+
+.industry-card__roles { margin-bottom: var(--spacing-lg); }
+
+.industry-card__roles h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-accent-dark);
+  margin-bottom: 10px;
+}
+
+.industry-card__role-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.industry-card__role-tag {
+  background: rgba(74,14,143,0.06);
+  color: var(--color-primary);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(74,14,143,0.1);
+  transition: all var(--transition-fast);
+}
+
+.industry-card__role-tag:hover {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+}
+
+/* ===== Why Grid ===== */
+.industries-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.industries-why__card {
+  text-align: center;
+}
+
+.industries-why__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.industries-why__card h3 {
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.industries-why__card p {
+  color: var(--color-dark-gray);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .industry-card,
+  .industry-card--reverse {
+    grid-template-columns: 1fr;
+  }
+  .industry-card--reverse .industry-card__visual,
+  .industry-card--reverse .industry-card__content {
+    order: unset;
+  }
+  .industry-card__visual { min-height: 200px; }
+  .industries-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .industries-why__grid { grid-template-columns: 1fr; }
+}
