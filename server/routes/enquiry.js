@@ -167,13 +167,8 @@ router.post('/', async (req, res) => {
       html: companyEmailTemplate({ name, email, phone, company, enquiryType, message })
     }).catch(err => console.error('Company email error:', err.message));
 
-    // Confirm to user
-    transporter.sendMail({
-      from: `"PerfectRecruit Services" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: 'We received your enquiry — PerfectRecruit Services',
-      html: userConfirmationTemplate(name)
-    }).catch(err => console.error('User confirmation email error:', err.message));
+    // User auto-reply confirmation email has been disabled by developer request.
+    // If you want to enable it in the future, you can configure it here.
 
     res.status(201).json({
       success: true,
